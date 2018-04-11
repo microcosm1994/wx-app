@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='usercard' style='background:url({{userInfo.avatarUrl}}) no-repeat;background-size:100%;'>
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        获取头像昵称
+      </button>
+      <block wx:else>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  </view>
+  <view class='main'>
+    <view class='btn' data-value='books' catch:tap='bindViewTap'>
+      <view class='btn-icon'>
+        <image src='../img/books.png'></image>
+      </view>
+      <text>小说</text>
+    </view>
+    <view class='btn' data-value='video' catch:tap='bindViewTap'>
+      <view class='btn-icon'>
+        <image src='../img/video.png'></image>
+      </view>
+      <text>电影</text>
+    </view>
+    <view class='btn' data-value='music' catch:tap='bindViewTap'>
+      <view class='btn-icon'>
+        <image src='../img/music.png'></image>
+      </view>
+      <text>音乐</text>
+    </view>
+    <view class='btn' data-value='Headproblem' catch:tap='bindViewTap'>
+      <view class='btn-icon'>
+        <image src='../img/Headproblem.png'></image>
+      </view>
+      <text>头条</text>
+    </view>
+    <view class='btn' data-value='books' catch:tap='bindViewTap'>
+      <view class='btn-icon'>
+        <image src='../img/books.png'></image>
+      </view>
+      <text>小说</text>
+    </view>
+  </view>
+</view>
