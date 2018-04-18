@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    books: []
+    free: [],
+    wrap: []
   },
 
   /**
@@ -14,13 +15,25 @@ Page({
   onLoad: function (options) {
     var self = this
     wx.request({
-      url: 'http://localhost:5000/book/frist',
+      url: 'http://localhost:5000/book/wrap',
+      method: 'GET',
+      success: function (response) {
+        if (response.statusCode == 200) {
+          console.log(response)
+          self.setData({
+            wrap: response.data
+          })
+        }
+      }
+    })
+    wx.request({
+      url: 'http://localhost:5000/book/free',
       method: 'GET',
       success: function (response) {
         if (response.statusCode == 200){
           console.log(response)
           self.setData({
-            books: response.data
+            free: response.data
           })
         }
       }

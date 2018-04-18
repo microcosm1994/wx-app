@@ -10,22 +10,22 @@
   <text class='title'>24小时热销</text>
   <view class='wrap-container'>
     <view class='wrap-box'>
-      <image class='wrap-bg' wx:for='{{books.wrap}}' src='http:{{item.cover}}'></image>
+      <image class='wrap-bg' wx:for='{{wrap.wrap}}' src='http:{{item.cover}}'></image>
       <view class='wrap'>
         <view class='wrap-text'>
-          <navigator wx:for='{{books.wrap}}' url="/pages/video/pages/books/books?url={{item.url}}" hover-class="navigator-hover">
-              <text class='wrap-text-row'>{{item.title}}<text style='color:#666;font-size:28rpx;margin-left:30rpx;'>{{item.actor}}</text></text>
+          <navigator wx:for='{{wrap.wrap}}' url="/pages/video/pages/books/books?url={{item.url}}" hover-class="navigator-hover">
+              <text class='wrap-text-row'>{{item.title}}<text style='color:#999999;font-size:28rpx;margin-left:30rpx;'>{{item.actor}}</text></text>
           </navigator>
         </view>
         <view class='wrap-img'>
-          <navigator wx:for='{{books.wrap}}' url="/pages/video/pages/books/books?url={{item.url}}" hover-class="navigator-hover">
+          <navigator wx:for='{{wrap.wrap}}' url="/pages/video/pages/books/books?url={{item.url}}" hover-class="navigator-hover">
             <image src='http:{{item.cover}}'></image>
           </navigator>
         </view>
       </view>
     </view>
     <scroll-view class='wrap-bottom' scroll-x>
-      <view class='books' wx:for='{{books.wrapbox}}'>
+      <view class='books' wx:for='{{wrap.wrapbox}}'>
         <navigator url="/pages/video/pages/books/books?url={{item.url}}" hover-class="navigator-hover">
           <view class='books-cover'>
             <image src='http:{{item.cover}}'></image>
@@ -39,7 +39,7 @@
   <text class='title'>限时免费</text>
   <text class='countdown'></text>
   <scroll-view class='free-container' scroll-x>
-    <view class='books' wx:for='{{books.free.freelist}}'>
+    <view class='books' wx:for='{{free.freelist}}'>
       <navigator url="/pages/video/pages/books/books?url={{item.url}}" hover-class="navigator-hover">
         <view class='books-cover'>
           <image src='http:{{item.cover}}'></image>
@@ -51,7 +51,7 @@
   </scroll-view>
   <text class='title'>周推荐</text>
   <scroll-view class='week-container' scroll-x>
-    <view class='books' wx:for='{{books.week}}'>
+    <view class='books' wx:for='{{wrap.week}}'>
       <navigator url="/pages/video/pages/books/books?url={{item.url}}" hover-class="navigator-hover">
         <view class='books-cover'>
           <image src='http:{{item.cover}}'></image>
@@ -63,7 +63,7 @@
   </scroll-view>
   <text class='title'>签约作家新书</text>
   <scroll-view class='writer-container' scroll-x>
-    <view class='books' wx:for='{{books.writer}}'>
+    <view class='books' wx:for='{{wrap.writer}}'>
       <navigator url="/pages/video/pages/books/books?url={{item.url}}" hover-class="navigator-hover">
         <view class='books-cover'>
           <image src='http:{{item.cover}}'></image>

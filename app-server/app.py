@@ -17,8 +17,10 @@ def video(type):
 
 @app.route('/book/<type>', methods=['GET', 'POST'])
 def book(type):
-    if type == 'frist':
-        return control.book.frist()
+    if type == 'free':
+        return control.book.free_func()
+    if type == 'wrap':
+        return control.book.wrap_func()
 
 
 if __name__ == '__main__':
