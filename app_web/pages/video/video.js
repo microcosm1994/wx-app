@@ -6,7 +6,8 @@ Page({
    */
   data: {
     title:'豆瓣热门电影',
-    video_list: []
+    frist_list: [],
+    groom: []
   },
 
   /**
@@ -15,12 +16,23 @@ Page({
   onLoad: function (options) {
     var self = this
     wx.request({
-      url: 'http://localhost:5000/video/screening',
+      url: 'http://localhost:5000/video/frist',
       method: 'GET',
       success: function (response) {
-        console.log(response)
+        var list = response.data.hotmovie_data
+        var data = []
+        for (var i = 0; i < list.length;i++){
+          if (i < 6) {
+            var obj = {}            
+            obj.title = list[i].title
+            obj.url = list[i].url
+            obj.cover = list[i].cover
+            data.push(obj)
+          }
+        }
         self.setData({
-          video_list: response.data
+          frist_list: response.data,
+          groom: JSON.stringify(data)
         })
       }
     })

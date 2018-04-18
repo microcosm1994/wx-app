@@ -1,26 +1,27 @@
-// pages/books/books.js
+// pages/video/pages/detailed/detailed.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    books: []
+    detailed: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self = this
+    var self =this
     wx.request({
-      url: 'http://localhost:5000/book/frist',
-      method: 'GET',
+      url: 'http://localhost:5000/video/detailed',
+      method: 'POST',
+      data: options,
       success: function (response) {
-        if (response.statusCode == 200){
-          console.log(response)
+        console.log(response)
+        if (response.statusCode == 200) {
           self.setData({
-            books: response.data
+            detailed: response.data
           })
         }
       }
@@ -31,7 +32,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**

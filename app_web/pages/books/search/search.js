@@ -1,30 +1,18 @@
-// pages/books/books.js
+// pages/books/search/search.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    books: []
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self = this
-    wx.request({
-      url: 'http://localhost:5000/book/frist',
-      method: 'GET',
-      success: function (response) {
-        if (response.statusCode == 200){
-          console.log(response)
-          self.setData({
-            books: response.data
-          })
-        }
-      }
-    })
+  
   },
 
   /**

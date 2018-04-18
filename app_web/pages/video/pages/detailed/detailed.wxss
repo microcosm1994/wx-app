@@ -1,0 +1,198 @@
+/* pages/video/pages/detailed/detailed.wxss */
+.detailed{
+  padding: 0rpx 20rpx 50rpx 20rpx;
+  box-sizing: border-box;
+}
+.cover-box{
+  width:100%;
+}
+.cover-box .cover{
+  display: inline-block;
+  vertical-align: top;
+  width: 40%;
+}
+.cover-box .cover image{
+  width: 100%;
+  height: 380rpx;
+}
+.cover-box .info{
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  height:auto;
+  margin-left: 50rpx;
+}
+.cover-box .info text{
+  word-break: break-all;
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color:#333;
+}
+.title text{
+  line-height: 100rpx;
+  text-align: left;
+  font-size: 50rpx;
+  font-weight:600;
+  word-break: break-all;
+}
+.sub-title{
+  display: block;
+  width:100%;
+  height:70rpx;
+  line-height: 70rpx;
+  text-align: left;
+  color:#072;
+  font-size:40rpx;
+  margin-top: 30rpx;
+}
+.synopsis{
+  display: block;
+  width:100%;
+  height: auto;
+  word-break: break-all;
+  font-size: 26rpx;
+  color:#333;
+  text-indent: 20rpx;
+}
+.actor-container{
+  white-space: nowrap;
+  margin-top: 20rpx;
+  height:400rpx;
+}
+.actor-container .actor{
+  display: inline-block;
+  vertical-align: top;
+  width: 280rpx;
+  height:400rpx;
+  margin-left: 30rpx;
+}
+.actor .actor-img{
+  width:100%;
+  height:340rpx;
+}
+.actor .actor-img image{
+  width:100%;
+  height:100%;
+}
+.actor .actor-name{
+  width: 100%;
+  height:30rpx;
+  display: block;
+  line-height: 30rpx;
+  text-align: center;
+  font-size:28rpx;
+  color:#000;
+}
+.actor .actor-status{
+  width: 100%;
+  height:30rpx;
+  display: block;
+  line-height: 30rpx;
+  text-align: center;
+  font-size:28rpx;
+  color:#666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.photo-container .photo{
+  width:40%;
+  height:360rpx;
+  margin-left: 40rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 40rpx;
+}
+.photo-container .photo image{
+  width:100%;
+  height:100%;
+}
+.photo-container{
+  white-space: nowrap;
+  margin-top: 20rpx;
+  height:400rpx;
+}
+.aboutmovies-container{
+  white-space: nowrap;
+  margin-top: 20rpx;
+  height:400rpx;
+}
+.aboutmovies-container .aboutmovies{
+  display: inline-block;
+  vertical-align: top;
+  width: 280rpx;
+  height:400rpx;
+  margin-left: 30rpx;
+}
+.aboutmovies-container .aboutmovies .aboutmovies-img{
+  width:100%;
+  height:370rpx;
+}
+.aboutmovies .aboutmovies-img image{
+  width:100%;
+  height:100%;
+}
+.aboutmovies-container .aboutmovies .aboutmovies-name{
+  width: 100%;
+  height:30rpx;
+  display: block;
+  line-height: 30rpx;
+  text-align: center;
+  font-size:28rpx;
+  color:#37a;
+}
+.comment-container .comment{
+  display: block;
+  width:100%;
+  margin-top: 50rpx;
+  padding-bottom: 50rpx;
+  border-bottom:1px solid #ccc;
+}
+.comment .comment-info{
+  width:100%;
+  height:70rpx;
+}
+.comment .comment-info .comment-info-nickname{
+  display: inline-block;
+  width: 60%;
+  height:100%;
+  line-height: 70rpx;
+  vertical-align: top;
+}
+.comment .comment-info .comment-info-nickname text{
+  font-size:36rpx;
+  color:#072;
+}
+.comment .comment-info .comment-info-like{
+  display: inline-block;
+  width: 30%;
+  height:100%;
+  line-height: 70rpx;
+  vertical-align: top;
+  margin-left: 30rpx;
+  text-align: right;
+}
+.comment .comment-info .comment-info-like text{
+  font-size:26rpx;
+}
+.comment .comment-content{
+  width:100%;
+}
+.comment .comment-content text{
+  font-size: 28rpx;
+  color:#333;
+  line-height: 30rpx;
+  text-indent: 20rpx;
+}
+.comment .comment-time{
+  width: 100%;
+  height:70rpx;
+  margin-top: 20rpx;
+}
+.comment .comment-time text{
+  width: 100%;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color:#666;
+  text-align: left;
+}

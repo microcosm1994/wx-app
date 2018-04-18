@@ -1,0 +1,28 @@
+<!--pages/video/pages/search/search.wxml-->
+<view class='search'>
+  <view class='search-box'>
+    <icon type="search" size='15'/>
+    <input placeholder="搜索" focus confirm-type='搜索' adjust-position='false' bindinput='search'/>
+  </view>
+</view>
+<view class='groom' wx:if='{{!status}}'>
+  <view class='groom-title'>热门推荐</view>
+  <view class='groom-video' wx:for='{{groom}}'>
+    <navigator url="/pages/video/pages/detailed/detailed?url={{item.url}}&cover={{item.cover}}" hover-class="navigator-hover">
+      {{item.title}}
+    </navigator>
+  </view>
+</view>
+<view class='result' wx:if='{{status}}'>
+  <view class='result-box' wx:for='{{result}}'>
+    <navigator url="/pages/video/pages/detailed/detailed?cover={{item.img}}&url={{item.url}}" hover-class="navigator-hover">
+      <view class='result-box-cover'>
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class='result-box-info'>
+        <text class='result-title' style='font-size:34rpx;color:#333;font-weight:600;'>{{item.title}}</text>
+        <text class='result-time' style='font-size:26rpx;color:#666;'>{{item.year}}</text>
+      </view>
+    </navigator>
+  </view>
+</view>

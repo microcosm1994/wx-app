@@ -4,20 +4,24 @@
     <text>{{title}}</text>
   </view>
   <view class='video-search'>
-    <button type="default" loading="" plain=""
+    <navigator url="/pages/video/pages/search/search?groom={{groom}}" hover-class="navigator-hover">
+      <button type="default" loading="" plain=""
         disabled="" bindtap="default" hover-class="other-button-hover">
-          <icon type="search" size="15"/>
-          <text>搜索</text>
-    </button>
+        <icon type="search" size="15"/>
+        <text>搜索</text>
+      </button>
+    </navigator>
   </view>
   <view class='video-container'>
     <view class='video-container-header'>
     近期上映
     </view>
     <scroll-view class="scroll-view_X" scroll-x='true'>
-      <view class='video-box' wx:for='{{video_list}}'>
-        <image src='{{item.cover}}'></image>
-        <text>{{item.title}}</text>
+      <view class='video-box' wx:for='{{frist_list.screening_data}}'>
+        <navigator url="/pages/video/pages/detailed/detailed?cover={{item.cover}}&url={{item.url}}" hover-class="navigator-hover">
+          <image src='{{item.cover}}'></image>
+          <text>{{item.title}}</text>
+        </navigator>
       </view>
     </scroll-view>
   </view>
@@ -26,31 +30,11 @@
       热门电影
     </view>
     <scroll-view class="scroll-view_X" scroll-x='true'>
-      <view class='video-box' wx:for='{{video_list}}'>
-        <image src='{{item.cover}}'></image>
-        <text>{{item.title}}</text>
-      </view>
-    </scroll-view>
-  </view>
-  <view class='video-container'>
-    <view class='video-container-header'>
-      电视剧
-    </view>
-    <scroll-view class="scroll-view_X" scroll-x='true'>
-      <view class='video-box' wx:for='{{video_list}}'>
-        <image src='{{item.cover}}'></image>
-        <text>{{item.title}}</text>
-      </view>
-    </scroll-view>
-  </view>
-  <view class='video-container'>
-    <view class='video-container-header'>
-      综艺
-    </view>
-    <scroll-view class="scroll-view_X" scroll-x='true'>
-      <view class='video-box' wx:for='{{video_list}}'>
-        <image src='{{item.cover}}'></image>
-        <text>{{item.title}}</text>
+      <view class='video-box' wx:for='{{frist_list.hotmovie_data}}'>
+        <navigator url="/pages/video/pages/detailed/detailed?url={{item.url}}&cover={{item.cover}}" hover-class="navigator-hover">
+          <image src='{{item.cover}}'></image>
+          <text>{{item.title}}</text>
+        </navigator>
       </view>
     </scroll-view>
   </view>

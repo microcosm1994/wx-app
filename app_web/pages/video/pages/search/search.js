@@ -1,29 +1,21 @@
-// pages/books/books.js
+// pages/video/pages/search/search.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    books: []
+    status: false,
+    groom: [],
+    result: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var self = this
-    wx.request({
-      url: 'http://localhost:5000/book/frist',
-      method: 'GET',
-      success: function (response) {
-        if (response.statusCode == 200){
-          console.log(response)
-          self.setData({
-            books: response.data
-          })
-        }
-      }
+    this.setData({
+      groom:JSON.parse(options.groom)
     })
   },
 
@@ -74,5 +66,26 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  search: function (event) {
+    var self = this
+    wx.request({
+      url: 'http://localhost:5000/video/search?q=' + event.detail.value,
+      method: 'GET',
+      success: function (response) {
+        console.log(response)
+        var resultList = []
+        for (var i=0;i<response.data.length;i++){
+          if (response.data[i].type == 'movie'){
+            resultList.push(response.data[i])
+          }
+        }
+        console.log(resultList)
+        self.setData({
+          status: true,
+          result: resultList
+        })
+      }
+    })
   }
 })
