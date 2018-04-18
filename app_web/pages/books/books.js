@@ -6,7 +6,9 @@ Page({
    */
   data: {
     free: [],
-    wrap: []
+    wrap: [],
+    week: [],
+    writer: []
   },
 
   /**
@@ -34,6 +36,30 @@ Page({
           console.log(response)
           self.setData({
             free: response.data
+          })
+        }
+      }
+    })
+    wx.request({
+      url: 'http://localhost:5000/book/week',
+      method: 'GET',
+      success: function (response) {
+        if (response.statusCode == 200) {
+          console.log(response)
+          self.setData({
+            week: response.data
+          })
+        }
+      }
+    })
+    wx.request({
+      url: 'http://localhost:5000/book/writer',
+      method: 'GET',
+      success: function (response) {
+        if (response.statusCode == 200) {
+          console.log(response)
+          self.setData({
+            writer: response.data
           })
         }
       }

@@ -51,7 +51,7 @@
   </scroll-view>
   <text class='title'>周推荐</text>
   <scroll-view class='week-container' scroll-x>
-    <view class='books' wx:for='{{wrap.week}}'>
+    <view class='books' wx:for='{{week}}'>
       <navigator url="/pages/video/pages/books/books?url={{item.url}}" hover-class="navigator-hover">
         <view class='books-cover'>
           <image src='http:{{item.cover}}'></image>
@@ -63,7 +63,7 @@
   </scroll-view>
   <text class='title'>签约作家新书</text>
   <scroll-view class='writer-container' scroll-x>
-    <view class='books' wx:for='{{wrap.writer}}'>
+    <view class='books' wx:for='{{writer}}'>
       <navigator url="/pages/video/pages/books/books?url={{item.url}}" hover-class="navigator-hover">
         <view class='books-cover'>
           <image src='http:{{item.cover}}'></image>

@@ -21,6 +21,10 @@ def book(type):
         return control.book.free_func()
     if type == 'wrap':
         return control.book.wrap_func()
+    if type == 'week':
+        return control.book.week_func()
+    if type == 'writer':
+        return control.book.writer_func()
 
 
 if __name__ == '__main__':
