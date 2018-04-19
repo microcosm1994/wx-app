@@ -25,6 +25,12 @@ def book(type):
         return control.book.week_func()
     if type == 'writer':
         return control.book.writer_func()
+    if type == 'detailed':
+        return control.book.detailed_func(request.args.get('url'))
+    if type == 'detailed_read':
+        return control.book.read_func()
+    if type == 'detailed_list':
+        return control.book.list_func()
 
 
 if __name__ == '__main__':

@@ -8,7 +8,8 @@ Page({
     free: [],
     wrap: [],
     week: [],
-    writer: []
+    writer: [],
+    zindex: [false, true, true]
   },
 
   /**
@@ -70,7 +71,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**
@@ -113,5 +114,12 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  curent: function () {
+    var arr = this.data.zindex
+    arr.unshift(arr.pop())
+    this.setData({
+      zindex: arr
+    })
   }
 })

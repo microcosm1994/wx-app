@@ -81,6 +81,11 @@
   color:#fff;
   font-size:32rpx;
 }
+.wrap-container .wrap-box .wrap .wrap-text .wrap-text-row .wrap-text-box{
+  display: inline-block;
+  vertical-align: top;
+  width: 30rpx;
+}
 .wrap-container .wrap-box .wrap .wrap-img{
   display: inline-block;
   vertical-align: top;

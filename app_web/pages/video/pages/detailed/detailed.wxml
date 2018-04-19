@@ -2,18 +2,18 @@
 <view class='detailed'>
   <view class='title'>
     <text>{{detailed.title}}</text>
-    <text class='grade' style='color:#ffb400;'>{{detailed.grade}}</text>
+    <text class='grade' style='color:#ffb400;' wx:if='{{detailed.grade}}'>{{detailed.grade}}</text>
   </view>
   <view class='cover-box'>
-    <view class='cover'>
+    <view class='cover' wx:if='{{detailed.cover}}'>
       <image src='{{detailed.cover}}'></image>
     </view>
     <view class='info'><text>{{detailed.info}}</text></view>
   </view>
-  <text class='sub-title'>剧情简介 · · · · · ·</text>
-  <text class='synopsis'>{{detailed.synopsis}}</text>
-  <text class='sub-title'>影人 · · · · · ·</text>
-  <scroll-view class='actor-container' scroll-x >
+  <text class='sub-title' wx:if='{{detailed.synopsis}}'>剧情简介 · · · · · ·</text>
+  <text class='synopsis' wx:if='{{detailed.synopsis}}'>{{detailed.synopsis}}</text>
+  <text class='sub-title' wx:if='{{detailed.actors}}'>影人 · · · · · ·</text>
+  <scroll-view class='actor-container' scroll-x  wx:if='{{detailed.actors}}'>
     <view class='actor' wx:for='{{detailed.actors}}'>
       <view class='actor-img'>
         <image src='{{item.img}}'></image>
@@ -22,14 +22,14 @@
       <text class='actor-status'>{{item.status}}</text>
     </view>
   </scroll-view>
-  <text class='sub-title'>图片 · · · · · ·</text>
-  <scroll-view class='photo-container' scroll-x >
+  <text class='sub-title' wx:if='{{detailed.photoList}}'>图片 · · · · · ·</text>
+  <scroll-view class='photo-container' scroll-x  wx:if='{{detailed.photoList}}'>
     <view class='photo' wx:for='{{detailed.photoList}}'>
       <image src='{{item}}'></image>
     </view>
   </scroll-view>
-  <text class='sub-title'>喜欢这部电影的人也喜欢 · · · · · ·</text>
-  <scroll-view class='aboutmovies-container' scroll-x >
+  <text class='sub-title' wx:if='{{detailed.aboutmovies}}'>喜欢这部电影的人也喜欢 · · · · · ·</text>
+  <scroll-view class='aboutmovies-container' scroll-x  wx:if='{{detailed.aboutmovies}}'>
     <view class='aboutmovies' wx:for='{{detailed.aboutmovies}}'>
       <view class='aboutmovies-img'>
         <image src='{{item.cover}}'></image>
@@ -37,8 +37,8 @@
       <text class='aboutmovies-name'>{{item.title}}</text>
     </view>
   </scroll-view>
-  <text class='sub-title'>短评 · · · · · ·</text>
-  <view class='comment-container'>
+  <text class='sub-title' wx:if='{{detailed.comment}}'>短评 · · · · · ·</text>
+  <view class='comment-container' wx:if='{{detailed.comment}}'>
     <view class='comment' wx:for='{{detailed.comment}}'>
       <view class='comment-info'>
         <view class='comment-info-nickname'>

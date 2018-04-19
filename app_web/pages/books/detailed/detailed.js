@@ -5,14 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    info: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options.url)
+    var self = this
+    wx.request({
+      url: 'http://localhost:5000/book/detailed?url=' + options.url,
+      method: 'GET',
+      success: function (response) {
+        if (response.statusCode == 200) {
+          self.setData({
+            info: response.data
+          })
+        }
+      }
+    })
   },
 
   /**

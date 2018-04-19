@@ -69,23 +69,23 @@ Page({
   },
   search: function (event) {
     var self = this
-    wx.request({
-      url: 'http://localhost:5000/video/search?q=' + event.detail.value,
-      method: 'GET',
-      success: function (response) {
-        console.log(response)
-        var resultList = []
-        for (var i=0;i<response.data.length;i++){
-          if (response.data[i].type == 'movie'){
-            resultList.push(response.data[i])
+    if (event.detail.value != ' '){
+      wx.request({
+        url: 'http://localhost:5000/video/search?q=' + event.detail.value,
+        method: 'GET',
+        success: function (response) {
+          var resultList = []
+          for (var i = 0; i < response.data.length; i++) {
+            if (response.data[i].type == 'movie') {
+              resultList.push(response.data[i])
+            }
           }
+          self.setData({
+            status: true,
+            result: resultList
+          })
         }
-        console.log(resultList)
-        self.setData({
-          status: true,
-          result: resultList
-        })
-      }
-    })
+      })
+    }
   }
 })

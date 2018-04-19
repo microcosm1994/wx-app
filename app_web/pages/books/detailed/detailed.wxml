@@ -1,2 +1,30 @@
 <!--pages/books/detailed/detailed.wxml-->
-<text>pages/books/detailed/detailed.wxml</text>
+<view class='header'>
+  <view class='cover'>
+    <image src='http:{{info.cover}}'></image>
+  </view>
+  <text style='font-weight:600;color:#000;'>{{info.title}}</text>
+  <text style='color:#333;'>{{info.status}}</text>
+  <text style='color:#666;'></text>
+</view>
+<view class='info'>
+  <view class='info-top'>
+    <view class='info-top-text'></view>
+    <view class='info-top-text'></view>
+    <view class='info-top-text'></view>
+  </view>
+  <view class='info-content'>
+
+  </view>
+  <view class='info-table'>
+    <view>目录</view>
+    <view class='info-table-text'></view>
+  </view>
+</view>
+<view class='read-container'>
+  <view class='read-title'></view>
+  <view class='read-content'>
+
+  </view>
+  <view class='read-btn'></view>
+</view>
