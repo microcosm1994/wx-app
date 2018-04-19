@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    info: {}
+    info: {},
+    content: {}
   },
 
   /**
@@ -21,6 +22,17 @@ Page({
         if (response.statusCode == 200) {
           self.setData({
             info: response.data
+          })
+        }
+      }
+    })
+    wx.request({
+      url: 'http://localhost:5000/book/detailed_read?url=' + options.url,
+      method: 'GET',
+      success: function (response) {
+        if (response.statusCode == 200) {
+          self.setData({
+            content: response.data
           })
         }
       }

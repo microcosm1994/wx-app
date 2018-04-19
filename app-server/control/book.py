@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 r = requests.get('https://www.qidian.com/')
 r.encoding = 'utf-8'
 soup = BeautifulSoup(r.text, from_encoding='utf-8')
-read_url = ''
 list_soup = ''
 
 
@@ -119,10 +118,6 @@ def detailed_func(url):
     global list_soup
     list_soup = BeautifulSoup(detailed.text, from_encoding='utf-8').select('.book-detail-wrap')[0]
     result = {}
-    # 试读文章
-    if len(detailed_soup.select('.book-information .book-info p .J-getJumpUrl')) > 0:
-        global read_url
-        read_url = detailed_soup.select('.book-information .book-info p .J-getJumpUrl')[0]['href']
     # 封面
     if len(detailed_soup.select('.book-information .book-img a img')) > 0:
         result['cover'] = detailed_soup.select('.book-information .book-img a img')[0]['src']
@@ -152,7 +147,13 @@ def detailed_func(url):
     return json.dumps(result)
 
 
-def read_func():
+def read_func(url):
+    detailed1 = requests.get('http:' + url)
+    detailed1.encoding = 'utf-8'
+    detailed1_soup = BeautifulSoup(detailed1.text, from_encoding='utf-8').select('.book-detail-wrap')[0]
+    # 试读文章
+    if len(detailed1_soup.select('.book-information .book-info p .J-getJumpUrl')) > 0:
+        read_url = detailed1_soup.select('.book-information .book-info p .J-getJumpUrl')[0]['href']
     read = requests.get('http:' + read_url)
     read.encoding = 'utf-8'
     read_soup = BeautifulSoup(read.text, from_encoding='utf-8')

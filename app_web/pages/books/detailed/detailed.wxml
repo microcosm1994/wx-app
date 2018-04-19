@@ -1,30 +1,38 @@
 <!--pages/books/detailed/detailed.wxml-->
-<view class='header'>
-  <view class='cover'>
-    <image src='http:{{info.cover}}'></image>
+<view style='background:#F8F3E9;'>
+  <view class='header'>
+    <view class='cover'>
+      <image src='http:{{info.cover}}'></image>
+    </view>
+    <text style='font-weight:600;color:#000;'>{{info.title}}</text>
+    <text style='color:#666;padding-left:40rpx;padding-right:40rpx;font-size:28rpx;line-height:40rpx;'>{{info.slogan}}</text>
   </view>
-  <text style='font-weight:600;color:#000;'>{{info.title}}</text>
-  <text style='color:#333;'>{{info.status}}</text>
-  <text style='color:#666;'></text>
-</view>
-<view class='info'>
-  <view class='info-top'>
-    <view class='info-top-text'></view>
-    <view class='info-top-text'></view>
-    <view class='info-top-text'></view>
+  <view class='info'>
+    <view class='info-top'>
+      <view class='info-top-text'>
+        <text class='subtitle'>{{info.type}}</text>
+        <text class='subtitle-bottom'>类型</text>
+      </view>
+      <view class='info-top-text'>
+        <text class='subtitle'>{{info.actor}}</text>
+        <text class='subtitle-bottom'>作者</text>
+      </view>
+      <view class='info-top-text'>
+        <text class='subtitle'>{{info.status}}</text>
+        <text class='subtitle-bottom'>状态</text>
+      </view>
+    </view>
+    <view class='info-content'>{{info.des}}</view>
+    <view class='info-table'>
+      <view class='info-table-title'>目录</view>
+      <view class='info-table-text'>{{info.updatetime}}更新{{info.updatetext}}</view>
+    </view>
   </view>
-  <view class='info-content'>
-
+  <view class='read-container'>
+    <view class='read-icon'>章节试读</view>
+    <view class='read-title'>{{content.title}}</view>
+    <view class='read-content'>{{content.content}}</view>
+    <view class='read-develop'>展开</view>
+    <view class='read-btn'>继续阅读</view>
   </view>
-  <view class='info-table'>
-    <view>目录</view>
-    <view class='info-table-text'></view>
-  </view>
-</view>
-<view class='read-container'>
-  <view class='read-title'></view>
-  <view class='read-content'>
-
-  </view>
-  <view class='read-btn'></view>
 </view>

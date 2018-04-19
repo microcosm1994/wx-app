@@ -1,1 +1,142 @@
 /* pages/books/detailed/detailed.wxss */
+.header{
+  width: 100%;
+  text-align: center;
+  padding: 60rpx 0rpx;
+}
+.header .cover{
+  width: 180rpx;
+  height:260rpx;
+  margin: 0 auto;
+}
+.header .cover image{
+  width: 100%;
+  height:100%;
+}
+.header text{
+  text-align: center;
+  display: block;
+  width:100%;
+  line-height: 60rpx;
+}
+.info{
+  background: #fff;
+}
+.info .info-top{
+  width:100%;
+  height:70rpx;
+  border-bottom: 1px solid #e2e2e2;
+  box-sizing: content-box;
+  padding-top:20rpx;
+  padding-bottom:20rpx;
+}
+.info .info-top .info-top-text{
+  display: inline-block;
+  vertical-align: top;
+  width:32%;
+  text-align: center;
+}
+.info .info-top .info-top-text .subtitle{
+  display: block;
+  height:40rpx;
+  width:100%;
+  line-height: 40rpx;
+  font-size:32rpx;
+  font-weight:600;
+  color:#333;
+}
+.info .info-top .info-top-text .subtitle-bottom{
+  display: block;
+  height:30rpx;
+  width:100%;
+  line-height: 30rpx;
+  font-size:24rpx;
+  color:#666;
+}
+.info .info-content{
+  width: 100%;
+  padding:30rpx 30rpx;
+  font-size:28rpx;
+  color:#333;
+  word-break: break-all;
+}
+.info .info-table{
+  width: 100%;
+  height:100rpx;
+  border-top:1px solid #e2e2e2;
+}
+.info .info-table .info-table-title{
+  display: inline-block;
+  vertical-align: top;
+  width:160rpx;
+  height:100%;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color:#000;
+  font-weight:600;
+  text-align: center;
+}
+.info .info-table .info-table-text{
+  display: inline-block;
+  vertical-align: top;
+  width:500rpx;
+  height:100%;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color:#333;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.read-container{
+  width: 100%;
+  padding: 40rpx 30rpx;
+}
+.read-container .read-icon{
+  width:110rpx;
+  height:40rpx;
+  background: #757575;
+  color:#fff;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.read-container .read-title{
+  width: 100%;
+  padding: 20rpx 0rpx;
+  font-size: 40rpx;
+  font-weight:600;
+  word-break: break-all;
+  line-height: 60rpx;
+}
+.read-container .read-content{
+  width: 100%;
+  height:1210rpx;
+  overflow: hidden;
+  font-size:32rpx;
+  line-height: 60rpx;
+  color:#333;
+}
+.read-container .read-develop{
+  width: 80rpx;
+  height:40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color:#37a;
+  float: right;
+  margin-right: 30rpx;
+}
+.read-container .read-btn{
+  width:140rpx;
+  height:80rpx;
+  color:#000;
+  font-size:28rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border:1px solid #e2e2e2;
+  border-radius:10rpx;
+  margin:0 auto;
+  margin-top: 60rpx;
+}
