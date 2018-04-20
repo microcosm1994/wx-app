@@ -30,7 +30,7 @@ def book(type):
     if type == 'detailed_read':
         return control.book.read_func(request.args.get('url'), request.args.get('type'))
     if type == 'detailed_list':
-        return control.book.list_func()
+        return control.book.list_func(request.args.get('url'))
     if type == 'groom':
         return control.book.groom_func()
     if type == 'search':

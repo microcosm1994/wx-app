@@ -5,10 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    url: '',
     info: {},
     content: {},
     height: '1210rpx',
-    isshow: false
+    isshow: false,
+    list: {},
+    list_show: true
   },
 
   /**
@@ -16,6 +19,9 @@ Page({
    */
   onLoad: function (options) {
     console.log(options.url)
+    this.setData({
+      url: options.url
+    })
     var self = this
     wx.request({
       url: 'http://localhost:5000/book/detailed?url=' + options.url,
@@ -93,6 +99,28 @@ Page({
     this.setData({
       height:'auto',
       isshow: true
+    })
+  },
+  listshow: function () {
+    var self = this
+    console.log(self.data.url)
+    wx.request({
+      url: 'http://localhost:5000/book/detailed_list?url=' + self.data.url,
+      method: 'GET',
+      success: function(response) {
+        if (response.statusCode == 200) {
+          console.log(response.data)
+          self.setData({
+            list: response.data,
+            list_show: false
+          })
+        }
+      }
+    })
+  },
+  listclose: function () {
+    this.setData({
+      list_show: true
     })
   }
 })

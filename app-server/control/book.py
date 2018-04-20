@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 r = requests.get('https://www.qidian.com/')
 r.encoding = 'utf-8'
 soup = BeautifulSoup(r.text, from_encoding='utf-8')
-list_soup = ''
 
 
 def free_func():
@@ -115,8 +114,6 @@ def detailed_func(url):
     detailed = requests.get('http:' + url)
     detailed.encoding = 'utf-8'
     detailed_soup = BeautifulSoup(detailed.text, from_encoding='utf-8').select('.book-detail-wrap')[0]
-    global list_soup
-    list_soup = BeautifulSoup(detailed.text, from_encoding='utf-8').select('.book-detail-wrap')[0]
     result = {}
     # 封面
     if len(detailed_soup.select('.book-information .book-img a img')) > 0:
@@ -180,19 +177,25 @@ def read_func(url, type):
     return json.dumps(result)
 
 
-def list_func():
+def list_func(url):
+    detailed2 = requests.get('http:' + url)
+    detailed2.encoding = 'utf-8'
+    list_soup = BeautifulSoup(detailed2.text, from_encoding='utf-8').select('.book-detail-wrap')[0]
     result = []
     if len(list_soup.select('.catalog-content-wrap .volume-wrap .volume')) > 0:
         volumelist = list_soup.select('.catalog-content-wrap .volume-wrap .volume')
+        print(volumelist)
         for item in volumelist:
             volume = {}
-            volume['title'] = item.select('h3').text
+            if len(item.select('h3')) > 0:
+                volume['title'] = item.select('h3')[0].text
             if len(item.select('ul li')) > 0:
                 content = []
                 for key in item.select('ul li'):
                     content_info = {}
                     content_info['title'] = key.select('a')[0].text
                     content_info['url'] = key.select('a')[0]['href']
+                    content_info['time'] = key.select('a')[0]['title']
                     content.append(content_info)
                 volume['content'] = content
             result.append(volume)

@@ -139,3 +139,61 @@
   margin:0 auto;
   margin-top: 60rpx;
 }
+.modal{
+  width: 100%;
+  height:100%;
+  position: fixed;
+  top:0;
+  left:0;
+}
+.modal .list{
+  display: inline-block;
+  vertical-align: top;
+  width:80%;
+  height:100%;
+  background: #fff;
+}
+.modal .list .list-item .roll{
+  width: 100%;
+  height:80rpx;
+  line-height: 80rpx;
+  font-size:28rpx;
+  color:#333;
+  padding-left: 30rpx;
+  border-bottom:1px solid #e2e2e2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.modal .list .list-item .roll-content{
+  width: 100%;
+  height:100rpx;
+  line-height: 100rpx;
+  padding-left: 30rpx;
+}
+.modal .list .list-item .roll-content .list-title{
+  width:100%;
+  height:60rpx;
+  line-height: 60rpx;
+  font-size:32rpx;
+  color:#000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.modal .list .list-item .roll-content .list-time{
+  width:100%;
+  height:40rpx;
+  line-height: 40rpx;
+  font-size:24rpx;
+  color:#666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.modal .close{
+  display: inline-block;
+  vertical-align: top;
+  width:19%;
+  height:100%;
+}

@@ -24,8 +24,12 @@
     </view>
     <view class='info-content'>{{info.des}}</view>
     <view class='info-table'>
-      <view class='info-table-title'>目录</view>
-      <view class='info-table-text'>{{info.updatetime}}更新{{info.updatetext}}</view>
+      <view class='info-table-title' bindtap='listshow'>目录</view>
+      <view class='info-table-text'>
+        <navigator url="/pages/books/read/read?url={{info.updateurl}}" hover-class="navigator-hover">
+          {{info.updatetime}}更新{{info.updatetext}}
+        </navigator>
+      </view>
     </view>
   </view>
   <view class='read-container'>
@@ -37,4 +41,18 @@
       <navigator url="/pages/books/read/read?url={{content.next}}" hover-class="navigator-hover">继续阅读</navigator>
     </view>
   </view>
+</view>
+<view class='modal' hidden='{{list_show}}'>
+  <scroll-view class='list' scroll-y>
+    <view class='list-item' wx:for='{{list}}'>
+      <view class='roll'>{{item.title}}</view>
+      <view class='roll-content' wx:for='{{item.content}}'>
+        <navigator url="/pages/books/read/read?url={{item.url}}" hover-class="navigator-hover">
+          <view class='list-title'>{{item.title}}</view>
+          <view class='list-time'>{{item.time}}</view>
+        </navigator>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='close' bindtap='listclose'></view>
 </view>
