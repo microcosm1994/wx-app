@@ -1,2 +1,29 @@
 <!--pages/books/search/search.wxml-->
-<text>pages/books/search/search.wxml</text>
+<view class='search'>
+  <icon type='search' size='20'></icon>
+  <input placeholder="搜索" auto-focus bindinput='search'/>
+  <navigator url="/pages/books/books" hover-class="navigator-hover">
+    <text style='color:#37a;'></text>
+  </navigator>
+</view>
+<view class='hotsearch'>热门搜索</view>
+<view class='groom'>
+  <view class='groom-item' wx:for='{{result.data}}'>
+    <navigator url="/pages/books/detailed/detailed?url={{item.url}}" hover-class="navigator-hover">
+      <view class='groom-cover'>
+        <image src='{{item.cover}}'></image>
+      </view>
+      <view class='groom-info'>
+        <view class='groom-title'>{{item.title}}</view>
+        <view class='groom-author'>
+          <text>{{item.actor}}</text>
+          <text> • </text>
+          <text>{{item.type}}</text>
+          <text> • </text>
+          <text>{{item.status}}</text>
+        </view>
+        <view class='groom-des'>{{item.des}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>

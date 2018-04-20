@@ -22,7 +22,7 @@
   height:100rpx;
   text-align: center;
 }
-.header icon{
+.header .search{
   width: 30rpx;
   height:30rpx;
   margin-top: 35rpx;
@@ -30,6 +30,10 @@
   vertical-align: top;
   float: right;
   margin-right: 60rpx;
+}
+.header .search icon{
+  width: 100rpx;
+  height:100rpx;
 }
 .main{
   width:100%;

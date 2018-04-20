@@ -1,5 +1,5 @@
 <!--pages/books/detailed/detailed.wxml-->
-<view style='background:#F8F3E9;'>
+<view style='background:#F8F3E9;padding-bottom:30rpx;'>
   <view class='header'>
     <view class='cover'>
       <image src='http:{{info.cover}}'></image>
@@ -31,8 +31,10 @@
   <view class='read-container'>
     <view class='read-icon'>章节试读</view>
     <view class='read-title'>{{content.title}}</view>
-    <view class='read-content'>{{content.content}}</view>
-    <view class='read-develop'>展开</view>
-    <view class='read-btn'>继续阅读</view>
+    <view class='read-content' style="height:{{height}};">{{content.content}}</view>
+    <view class='read-develop' bindtap='show' hidden='{{isshow}}'>展开</view>
+    <view class='read-btn' hidden='{{!isshow}}'>
+      <navigator url="/pages/books/read/read?url={{content.next}}" hover-class="navigator-hover">继续阅读</navigator>
+    </view>
   </view>
 </view>

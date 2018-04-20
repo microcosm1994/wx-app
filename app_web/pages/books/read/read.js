@@ -1,14 +1,11 @@
-// pages/books/search/search.js
+// pages/books/read/read.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    result: {
-      status:  false,
-      data: {}
-    }
+    content: {}
   },
 
   /**
@@ -17,16 +14,13 @@ Page({
   onLoad: function (options) {
     var self = this
     wx.request({
-      url: 'http://localhost:5000/book/groom',
-      method: 'GET',
+      url: 'http://localhost:5000/book/detailed_read?type=read&url=' + options.url,
+      method:'GET',
       success: function (response) {
-        if (response.statusCode == 200) {
+        if (response.statusCode == 200){
           console.log(response.data)
           self.setData({
-            result: {
-              status: false,
-              data: response.data
-            }
+            content: response.data
           })
         }
       }
@@ -80,25 +74,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  search: function(event) {
-    var self = this
-    if (event.detail.value != ' ') {
-      wx.request({
-        url: 'http://localhost:5000/book/search?value=' + event.detail.value,
-        method: 'GET',
-        success: function (response) {
-          if (response.statusCode == 200) {
-            console.log(response.data)
-            self.setData({
-              result: {
-                status: true,
-                data: response.data
-              }
-            })
-          }
-        }
-      })
-    }
   }
 })

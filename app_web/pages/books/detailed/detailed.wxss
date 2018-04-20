@@ -112,7 +112,6 @@
 }
 .read-container .read-content{
   width: 100%;
-  height:1210rpx;
   overflow: hidden;
   font-size:32rpx;
   line-height: 60rpx;

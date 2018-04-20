@@ -1,0 +1,14 @@
+<!--pages/books/read/read.wxml-->
+<view style='background:#F8F3E9;padding-top:20rpx;padding-bottom:20rpx;'>
+  <view class='prev'>
+    <navigator url="/pages/books/read/read?url={{content.prev}}" open-type="redirect" hover-class="other-navigator-hover">上一章</navigator>
+  </view>
+  <view class='container'>
+    <view class='title'>{{content.title}}</view>
+    <view class='content'>{{content.content}}</view>
+    <view class='content' hidden='{{content.vip}}' style='text-align:center;font-size:40rpx;color:red;font-seight:600;'>这是VIP章节，请到正版网站进行阅读</view>
+  </view>
+  <view class='next'>
+    <navigator url="/pages/books/read/read?url={{content.next}}" open-type="redirect" hover-class="other-navigator-hover">下一章</navigator>
+  </view>
+</view>

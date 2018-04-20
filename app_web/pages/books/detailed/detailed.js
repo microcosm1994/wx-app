@@ -6,7 +6,9 @@ Page({
    */
   data: {
     info: {},
-    content: {}
+    content: {},
+    height: '1210rpx',
+    isshow: false
   },
 
   /**
@@ -27,7 +29,7 @@ Page({
       }
     })
     wx.request({
-      url: 'http://localhost:5000/book/detailed_read?url=' + options.url,
+      url: 'http://localhost:5000/book/detailed_read?type=try&url=' + options.url,
       method: 'GET',
       success: function (response) {
         if (response.statusCode == 200) {
@@ -86,5 +88,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  show: function () {
+    this.setData({
+      height:'auto',
+      isshow: true
+    })
   }
 })

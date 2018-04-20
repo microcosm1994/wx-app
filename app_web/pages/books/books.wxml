@@ -4,7 +4,11 @@
     <view class='header-tab-btn'>男生</view>
     <view class='header-tab-btn'>女生</view>
   </view>
-  <icon type='search' size='20'></icon>
+  <view class='search'>
+    <navigator url="/pages/books/search/search?title=navigate" hover-class="navigator-hover">
+      <icon type='search' size='20' color='red'></icon>
+    </navigator>
+  </view>
 </view>
 <view class='main'>
   <text class='title'>24小时热销</text>

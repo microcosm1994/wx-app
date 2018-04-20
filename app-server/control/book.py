@@ -147,13 +147,16 @@ def detailed_func(url):
     return json.dumps(result)
 
 
-def read_func(url):
-    detailed1 = requests.get('http:' + url)
-    detailed1.encoding = 'utf-8'
-    detailed1_soup = BeautifulSoup(detailed1.text, from_encoding='utf-8').select('.book-detail-wrap')[0]
-    # 试读文章
-    if len(detailed1_soup.select('.book-information .book-info p .J-getJumpUrl')) > 0:
-        read_url = detailed1_soup.select('.book-information .book-info p .J-getJumpUrl')[0]['href']
+def read_func(url, type):
+    if type == 'try':
+        detailed1 = requests.get('http:' + url)
+        detailed1.encoding = 'utf-8'
+        detailed1_soup = BeautifulSoup(detailed1.text, from_encoding='utf-8').select('.book-detail-wrap')[0]
+        # 试读文章
+        if len(detailed1_soup.select('.book-information .book-info p .J-getJumpUrl')) > 0:
+            read_url = detailed1_soup.select('.book-information .book-info p .J-getJumpUrl')[0]['href']
+    else:
+        read_url = url
     read = requests.get('http:' + read_url)
     read.encoding = 'utf-8'
     read_soup = BeautifulSoup(read.text, from_encoding='utf-8')
@@ -163,12 +166,17 @@ def read_func(url):
         result['title'] = read_soup.select('.read-main-wrap #j_chapterBox .text-wrap .main-text-wrap .text-head h3')[
             0].text
         # 内容
-        result['content'] = read_soup.select('.read-main-wrap #j_chapterBox .text-wrap .main-text-wrap .read-content')[0].text
+        result['content'] = read_soup.select('.read-main-wrap #j_chapterBox .text-wrap .main-text-wrap .read-content')[
+            0].text
     if len(read_soup.select('.read-main-wrap .chapter-control')) > 0:
         # 下一章
         result['next'] = read_soup.select('.read-main-wrap .chapter-control #j_chapterNext')[0]['href']
         # 上一章
         result['prev'] = read_soup.select('.read-main-wrap .chapter-control #j_chapterPrev')[0]['href']
+    if len(read_soup.select('.read-main-wrap .main-text-wrap .vip-limit-wrap')) > 0:
+        result['vip'] = False
+    else:
+        result['vip'] = True
     return json.dumps(result)
 
 
@@ -189,3 +197,55 @@ def list_func():
                 volume['content'] = content
             result.append(volume)
     return json.dumps(result)
+
+
+def groom_func():
+    groom = requests.get('http://www.qidian.com/search?kw=')
+    groom.encoding = 'utf-8'
+    groom_soup = BeautifulSoup(groom.text, from_encoding='utf-8')
+    data = []
+    if len(groom_soup.select('#result-list .book-img-text li')) > 0:
+        resultlist = groom_soup.select('#result-list .book-img-text li')
+        for item in resultlist:
+            result = {}
+            if len(item.select('.book-img-box a img')) > 0:
+                result['cover'] = item.select('.book-img-box a img')[0]['src']
+            if len(item.select('.book-mid-info h4 a')) > 0:
+                result['url'] = item.select('.book-mid-info h4 a')[0]['href']
+                result['title'] = item.select('.book-mid-info h4 a')[0].text
+            if len(item.select('.book-mid-info .author .name')) > 0:
+                result['actor'] = item.select('.book-mid-info .author .name')[0].text
+            if len(item.select('.book-mid-info .author a')) > 1:
+                result['type'] = item.select('.book-mid-info .author a')[1].text
+            if len(item.select('.book-mid-info .author span')) > 0:
+                result['status'] = item.select('.book-mid-info .author span')[0].text
+            if len(item.select('.book-mid-info .intro')) > 0:
+                result['des'] = item.select('.book-mid-info .intro')[0].text
+            data.append(result)
+    return json.dumps(data)
+
+
+def search_func(value):
+    search = requests.get('http://www.qidian.com/search?kw=' + value)
+    search.encoding = 'utf-8'
+    search_soup = BeautifulSoup(search.text, from_encoding='utf-8')
+    if len(search_soup.select('#result-list .book-img-text li')) > 0:
+        data = []
+        resultlist = search_soup.select('#result-list .book-img-text li')
+        for item in resultlist:
+            result = {}
+            if len(item.select('.book-img-box a img')) > 0:
+                result['cover'] = item.select('.book-img-box a img')[0]['src']
+            if len(item.select('.book-mid-info h4 a')) > 0:
+                result['url'] = item.select('.book-mid-info h4 a')[0]['href']
+                result['title'] = item.select('.book-mid-info h4 a')[0].text
+            if len(item.select('.book-mid-info .author .name')) > 0:
+                result['actor'] = item.select('.book-mid-info .author .name')[0].text
+            if len(item.select('.book-mid-info .author a')) > 1:
+                result['type'] = item.select('.book-mid-info .author a')[1].text
+            if len(item.select('.book-mid-info .author span')) > 0:
+                result['status'] = item.select('.book-mid-info .author span')[0].text
+            if len(item.select('.book-mid-info .intro')) > 0:
+                result['des'] = item.select('.book-mid-info .intro')[0].text
+            data.append(result)
+    return json.dumps(data)
