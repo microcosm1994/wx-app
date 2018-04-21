@@ -153,6 +153,20 @@
   height:100%;
   background: #fff;
 }
+.modal .list .loading{
+  width: 100%;
+  height:100%;
+  position: relative;
+}
+.modal .list .loading image{
+  display: block;
+  width:40rpx;
+  height:40rpx;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
 .modal .list .list-item .roll{
   width: 100%;
   height:80rpx;
@@ -196,4 +210,22 @@
   vertical-align: top;
   width:19%;
   height:100%;
+  background: rgba(0,0,0,0.8);
+}
+.detaild-loading{
+  width: 100%;
+  height:100%;
+  position: fixed;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,0.8);
+}
+.detaild-loading image{
+  display: block;
+  width:40rpx;
+  height:40rpx;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
 }

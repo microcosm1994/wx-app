@@ -44,6 +44,9 @@
 </view>
 <view class='modal' hidden='{{list_show}}'>
   <scroll-view class='list' scroll-y>
+    <view class='loading' hidden='{{loading_show}}'> 
+      <image src='../../img/5-121204193934-50.gif'></image>
+    </view>
     <view class='list-item' wx:for='{{list}}'>
       <view class='roll'>{{item.title}}</view>
       <view class='roll-content' wx:for='{{item.content}}'>
@@ -55,4 +58,7 @@
     </view>
   </scroll-view>
   <view class='close' bindtap='listclose'></view>
+</view>
+<view class='detaild-loading' hidden='{{detaild_loading_show}}'> 
+  <image src='../../img/5-121204193934-50.gif'></image>
 </view>

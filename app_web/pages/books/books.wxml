@@ -31,7 +31,7 @@
               <view class='wrap-text-row'><view class='wrap-text-box'><text style='color:#fff;font-size:24rpx;' hidden='{{zindex[2]}}'>▶</text></view>{{wrap.wrap[2].title}}<text style='color:#999999;font-size:28rpx;margin-left:30rpx;'>{{wrap.wrap[2].actor}}</text></view>
           </navigator>
         </view>
-        <swiper class='wrap-img' autoplay='true' circular='true' next-margin='10px' duration='30' bindchange='curent'>
+        <swiper class='wrap-img' autoplay='true' circular='true' next-margin='10px' duration='30' bindchange='curent' interval='3000'>
           <swiper-item wx:for='{{wrap.wrap}}'>
             <navigator url="/pages/books/detailed/detailed?url={{item.url}}" hover-class="navigator-hover">
               <image src='http:{{item.cover}}'></image>
@@ -44,7 +44,7 @@
       <view class='books' wx:for='{{wrap.wrapbox}}'>
         <navigator url="/pages/books/detailed/detailed?url={{item.url}}" hover-class="navigator-hover">
           <view class='books-cover'>
-            <image src='http:{{item.cover}}'></image>
+            <image src='http:{{item.cover}}' lazy-load='true'></image>
           </view>
           <text style='color:#333;font-size:30rpx;'>{{item.title}}</text>
           <text style='color:#666;font-size:28rpx;'>{{item.actor}}</text>
@@ -58,7 +58,7 @@
     <view class='books' wx:for='{{free}}'>
       <navigator url="/pages/books/detailed/detailed?url={{item.url}}" hover-class="navigator-hover">
         <view class='books-cover'>
-          <image src='http:{{item.cover}}'></image>
+          <image src='http:{{item.cover}}' lazy-load='true'></image>
         </view>
         <text style='color:#333;font-size:28rpx;'>{{item.title}}</text>
         <text style='color:red;font-size:24rpx;'>免费</text>
@@ -70,7 +70,7 @@
     <view class='books' wx:for='{{week}}'>
       <navigator url="/pages/books/detailed/detailed?url={{item.url}}" hover-class="navigator-hover">
         <view class='books-cover'>
-          <image src='http:{{item.cover}}'></image>
+          <image src='http:{{item.cover}}' lazy-load='true'></image>
         </view>
         <text style='color:#333;font-size:28rpx;'>{{item.title}}</text>
         <text style='color:#666;font-size:24rpx;'>{{item.actor}}</text>

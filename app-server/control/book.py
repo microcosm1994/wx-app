@@ -182,16 +182,16 @@ def list_func(url):
     detailed2.encoding = 'utf-8'
     list_soup = BeautifulSoup(detailed2.text, from_encoding='utf-8').select('.book-detail-wrap')[0]
     result = []
-    if len(list_soup.select('.catalog-content-wrap .volume-wrap .volume')) > 0:
-        volumelist = list_soup.select('.catalog-content-wrap .volume-wrap .volume')
-        print(volumelist)
+    print(list_soup.select('.catalog-content-wrap'))
+    if len(list_soup.select('.catalog-content-wrap .volume-wrap')) > 0:
+        volumelist = list_soup.select('.catalog-content-wrap .volume-wrap')
         for item in volumelist:
             volume = {}
-            if len(item.select('h3')) > 0:
-                volume['title'] = item.select('h3')[0].text
-            if len(item.select('ul li')) > 0:
+            if len(item.select('.volume h3')) > 0:
+                volume['title'] = item.select('.volume h3')[0].text
+            if len(item.select('.volume ul li')) > 0:
                 content = []
-                for key in item.select('ul li'):
+                for key in item.select('.volume ul li'):
                     content_info = {}
                     content_info['title'] = key.select('a')[0].text
                     content_info['url'] = key.select('a')[0]['href']
