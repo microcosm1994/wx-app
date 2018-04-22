@@ -182,7 +182,6 @@ def list_func(url):
     detailed2.encoding = 'utf-8'
     list_soup = BeautifulSoup(detailed2.text, from_encoding='utf-8').select('.book-detail-wrap')[0]
     result = []
-    print(list_soup.select('.catalog-content-wrap'))
     if len(list_soup.select('.catalog-content-wrap .volume-wrap')) > 0:
         volumelist = list_soup.select('.catalog-content-wrap .volume-wrap')
         for item in volumelist:

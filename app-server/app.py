@@ -37,6 +37,7 @@ def book(type):
         return control.book.search_func(request.args.get('value'))
 
 
+
 if __name__ == '__main__':
     app.debug = True
     app.run(threaded=True)

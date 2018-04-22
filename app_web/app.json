@@ -9,13 +9,14 @@
     "pages/video/pages/search/search",
     "pages/books/search/search",
     "pages/books/detailed/detailed",
-    "pages/books/read/read"
+    "pages/books/read/read",
+    "pages/pic/pic"
   ],
   "window": {
     "backgroundColor": "#f5f5f5",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#333",
-    "navigationBarTitleText": "tools",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": false,
     "onReachBottomDistance": 50

@@ -13,11 +13,23 @@
     <splitter split-orientation="horizontal" split-proportion="0.36243537">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="book.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/control/book.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2873">
+                  <caret line="252" column="27" lean-forward="true" selection-start-line="252" selection-start-column="27" selection-end-line="252" selection-end-column="27" />
+                  <folding>
+                    <element signature="e#16#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="653">
-                  <caret line="32" column="61" lean-forward="false" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
+                <state relative-caret-position="930">
+                  <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#32#0" expanded="true" />
                   </folding>
@@ -28,9 +40,11 @@
           <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/control/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-                  <folding />
+                <state relative-caret-position="60">
+                  <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#12#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -39,26 +53,12 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="book.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/control/book.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1758">
-                  <caret line="184" column="49" lean-forward="false" selection-start-line="184" selection-start-column="49" selection-end-line="184" selection-end-column="49" />
-                  <folding>
-                    <element signature="e#16#31#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="video.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="video.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/control/video.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="653">
-                  <caret line="137" column="31" lean-forward="true" selection-start-line="137" selection-start-column="31" selection-end-line="137" selection-end-column="31" />
-                  <folding>
-                    <element signature="e#16#31#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="60">
+                  <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="29" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -83,9 +83,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/video.py" />
-        <option value="$PROJECT_DIR$/control/__init__.py" />
         <option value="$PROJECT_DIR$/control/video.py" />
+        <option value="$PROJECT_DIR$/control/music.py" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/control/__init__.py" />
         <option value="$PROJECT_DIR$/control/book.py" />
       </list>
     </option>
@@ -96,7 +97,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
@@ -199,7 +200,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -251,7 +252,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="12" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -269,9 +272,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="50" />
-          <folding>
-            <element signature="e#16#31#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -336,14 +337,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/video.py" />
-    <entry file="file://$PROJECT_DIR$/control/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/requests/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -352,33 +345,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control/video.py">
+    <entry file="file://$PROJECT_DIR$/control/book.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="137" column="31" lean-forward="true" selection-start-line="137" selection-start-column="31" selection-end-line="137" selection-end-column="31" />
+        <state relative-caret-position="2873">
+          <caret line="252" column="27" lean-forward="true" selection-start-line="252" selection-start-column="27" selection-end-line="252" selection-end-column="27" />
           <folding>
             <element signature="e#16#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/pic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="32" column="61" lean-forward="false" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
+        <state relative-caret-position="930">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control/book.py">
+    <entry file="file://$PROJECT_DIR$/control/video.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1758">
-          <caret line="184" column="49" lean-forward="false" selection-start-line="184" selection-start-column="49" selection-end-line="184" selection-end-column="49" />
-          <folding>
-            <element signature="e#16#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
