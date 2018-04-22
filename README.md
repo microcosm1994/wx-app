@@ -3,6 +3,16 @@
 ###### flask,requests,json,BeautifulSoup,前端使用微信小程序，
 ###### 小说爬取起点网站数据，电影爬取豆瓣网站数据,
 ###### 开发周期一周工作日
+#### install
+> 安装python，微信小程序等开发工具，准备开发所需。
+> pip install flask
+> pip install requests
+> pip install BeautifulSoup
+#### run
+> 设置小程序为开发模式，设置不校验域名以及https证书
+> cd app_server
+> python app.py
+> 打开微信小程序浏览效果
 #### 小说演示
 ![这里写图片描述](https://img-blog.csdn.net/20180422204432705?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5MDgxOTc0/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 #### 电影演示
